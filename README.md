@@ -1,2 +1,5 @@
 # EZ-Tasker
- Task Management Web App
+
+Task Management Web App
+
+All code by Saar Cohen
