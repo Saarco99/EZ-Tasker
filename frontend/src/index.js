@@ -1,3 +1,5 @@
+import { API_URL } from "./constants.js";
+
 document.querySelector("form").addEventListener("submit", function (event) {
   // Prevent the form from being submitted
   event.preventDefault();

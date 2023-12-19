@@ -1,5 +1,5 @@
 -- Create the database
-CREATE DATABASE eztasker;
+CREATE DATABASE ez_tasker;
 
 -- Use the database
 USE eztasker;
@@ -19,6 +19,7 @@ CREATE TABLE tasks (
     user_id INT NOT NULL,
     title VARCHAR(100) NOT NULL,
     description TEXT,
+    status VARCHAR(20) DEFAULT 'pending',
     due_date DATE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id)
