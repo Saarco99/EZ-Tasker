@@ -10,6 +10,26 @@ import java.sql.Time;
 
 @Entity
 public class Task {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private Long userId;
+
+    private String title;
+
+    private String description;
+
+    private Status status;
+
+    private Time createdAt;//full date
+
+    private Time finishedAt;
+
+    private boolean completed;
+
+    // Constructors, getters, and setters
+
 
     public void setId(Long id) {
         this.id = id;
@@ -39,24 +59,8 @@ public class Task {
         this.finishedAt = finishedAt;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+   
 
-    private String title;
-    private String description;
-
-    private Status status;
-
-    private Time createdAt;//full date
-    private Time finishedAt;
-
-
-    private boolean completed;
-
-// Constructors, getters, and setters
-
-// Constructors
 
     public Task() {
 // Default constructor
@@ -66,6 +70,7 @@ public class Task {
         this.title = title;
         this.description = description;
         this.completed = completed;
+
     }
 
 // Getters and setters

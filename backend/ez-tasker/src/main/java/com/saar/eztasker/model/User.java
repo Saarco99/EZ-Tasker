@@ -1,11 +1,33 @@
 package com.saar.eztasker.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import java.util.HashMap;
+import java.util.Map;
 
+@Entity
 public class User {
+    @Id
     private long id;
+
     private String username;
-    HashMap<Long, Task> tasks;
+
+    @OneToMany
+    private Map<Long, Task> tasks;  // (task id, task)
+
+    public User() {
+        // Default constructor
+        this.tasks = new HashMap<>();
+    }
+
+    public User(long id, String username) {
+        this.id = id;
+        this.username = username;
+        this.tasks = new HashMap<>();
+    }
+
+    // Getters and setters
 
     public long getId() {
         return id;
@@ -23,19 +45,11 @@ public class User {
         this.username = username;
     }
 
-    public HashMap<Long, Task> getTasks() {
+    public Map<Long, Task> getTasks() {
         return tasks;
     }
 
-    public void setTasks(HashMap<Long, Task> tasks) {
+    public void setTasks(Map<Long, Task> tasks) {
         this.tasks = tasks;
     }
-
-    public User(long id, String username) {
-        this.id = id;
-        this.username = username;
-        this.tasks = new HashMap<>();
-    }
-
-
 }

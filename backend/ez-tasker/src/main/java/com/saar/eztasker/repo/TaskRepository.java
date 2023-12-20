@@ -1,34 +1,25 @@
 package com.saar.eztasker.repo;
+
 import com.saar.eztasker.model.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Time;
+import java.util.List;
+
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Long> {
-    // Additional query methods can be added here if needed
+    // Existing methods
     Task findById(long id);
-
-    Task save(Task task);
-
     void deleteById(long id);
-
-    void delete(Task task);
-
     boolean existsById(long id);
-
-    boolean existsByTitle(String title);
-
-    boolean existsByDescription(String description);
-
-    boolean existsByCompleted(boolean completed);
-
     boolean existsByUserId(long userId);
-
-    boolean existsByUserUsername(String username);
-
-    boolean existsByUserEmail(String email);
-
-    boolean existsByUserPassword(String password);
-
-    boolean existsByUserFirstName(String firstName);
+    void deleteByUserId(long userId);
+    Task findByUserId(long userId);
+    Task save(Task task);
+    void delete(Task task);
+    List<Task> findByTitle(String title);
+    List<Task> findByDescriptionContaining(String keyword);
+    List<Task> findByCompletedTrue();
+    List<Task> findByCreatedAtAfter(Time specificTime);
 }

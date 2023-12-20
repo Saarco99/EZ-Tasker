@@ -8,7 +8,6 @@ public class EzTaskerApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(EzTaskerApplication.class, args);
-
 	}
 
 

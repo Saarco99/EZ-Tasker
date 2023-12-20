@@ -2,4 +2,4 @@
 
 Task Management Web App
 
-All code by Saar Cohen
+Coded by Saar Cohen

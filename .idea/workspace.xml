@@ -4,11 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="461dac32-671d-4d43-8dfb-f6fa54462e07" name="Changes" comment="" />
+    <list default="true" id="461dac32-671d-4d43-8dfb-f6fa54462e07" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/ez-tasker/src/main/java/com/saar/eztasker/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/ez-tasker/src/main/java/com/saar/eztasker/model/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/ez-taskerold/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/ez-taskerold/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/ez-taskerold/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/ez-taskerold/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/ez-taskerold/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/ez-taskerold/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/ez-taskerold/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/ez-taskerold/src/main/java/com/saar/eztasker/EzTaskerApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/ez-taskerold/src/main/java/com/saar/eztasker/controller/TaskController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/ez-taskerold/src/main/java/com/saar/eztasker/model/Task.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/ez-taskerold/src/main/java/com/saar/eztasker/repo/TaskRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/ez-taskerold/src/main/java/com/saar/eztasker/srv/TaskService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/ez-taskerold/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/ez-taskerold/src/test/java/com/saar/eztasker/EzTaskerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/tables.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseLocalColorSettings">
+    <colors>
+      <entry key="5f57e4e0-a339-4b3a-b263-2f832415f2bc" value="Blue" />
+    </colors>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -21,19 +46,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
+    "last_opened_file_path": "/Users/cohen/Documents/GitHub/EZ-Tasker",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ],
+    "RunConfigurationTargetLRU": [
+      "5f57e4e0-a339-4b3a-b263-2f832415f2bc"
+    ]
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RunManager" selected="Node.js.front">
+    <configuration name="tables.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/database/tables.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="5f57e4e0-a339-4b3a-b263-2f832415f2bc" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="EZ-Tasker" />
       <method v="2">
@@ -47,6 +88,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="front" type="NodeJSConfigurationType" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Database Script.tables.sql" />
+      <item itemvalue="Node.js.front" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Database Script.tables.sql" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -59,6 +112,7 @@
       <workItem from="1702912916936" duration="824000" />
       <workItem from="1702914738915" duration="233000" />
       <workItem from="1702918212794" duration="24000" />
+      <workItem from="1702992391154" duration="891000" />
     </task>
     <servers />
   </component>

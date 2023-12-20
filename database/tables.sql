@@ -1,15 +1,14 @@
 -- Create the database
+DROP DATABASE ez_tasker;
 CREATE DATABASE ez_tasker;
 
 -- Use the database
-USE eztasker;
+USE ez_tasker;
 
 -- Create the users table
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL,
-    password VARCHAR(50) NOT NULL,
-    email VARCHAR(100) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -24,3 +23,7 @@ CREATE TABLE tasks (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
+SHOW TABLES;
+INSERT INTO users (username) VALUES ('Saar');
+SELECT * FROM users
+
