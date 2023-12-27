@@ -1,5 +1,6 @@
 package com.saar.eztasker.controller;
 import com.saar.eztasker.model.Task;
+import com.saar.eztasker.model.TaskRequest;
 import com.saar.eztasker.srv.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,19 +22,24 @@ public class TaskController {
 
         // Controller methods
 
-        @GetMapping
+        @GetMapping("/all")
         public List<Task> getAllTasks() {
             return taskService.getAllTasks();
         }
 
-        @GetMapping("/{taskId}")
+        @GetMapping("/all/{userId}")
+        public List<Task> getAllTasksByUserId(@PathVariable Long userId) {
+            return taskService.getAllTasksByUserId(userId);
+        }
+
+        @GetMapping("/one/{taskId}")
         public Task getTaskById(@PathVariable Long taskId) {
             return taskService.getTaskById(taskId);
         }
 
-        @PostMapping
-        public Task createTask(@RequestBody Task task) {
-            return taskService.createTask(task);
+        @PostMapping("/addtask")
+        public Task createTask(@RequestBody TaskRequest taskRequest) {
+            return taskService.createTask(taskRequest);
         }
 
         @PutMapping("/{taskId}")

@@ -1,8 +1,11 @@
 package com.saar.eztasker.srv;
 import com.saar.eztasker.model.User;
+import com.saar.eztasker.model.UserRequest;
 import com.saar.eztasker.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -13,11 +16,12 @@ public class UserService {
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-    public User registerUser(User user) {
+    public User registerUser(User user) {//auto casting to user by username from header
+
         return userRepository.save(user);
     }
 
-    public User getUserByUsername(String username) {
+    public Optional<User> getUserByUsername(String username) {
         return userRepository.findByUsername(username);
     }
 
@@ -25,7 +29,7 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public User getUserById(long id) {
+    public Optional<User> getUserById(long id) {
         return userRepository.findById(id);
     }
 

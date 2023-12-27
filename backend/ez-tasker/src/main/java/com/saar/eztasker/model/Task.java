@@ -1,85 +1,69 @@
 package com.saar.eztasker.model;
 
 import com.saar.eztasker.constant.Status;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 
-import java.sql.Time;
+import jakarta.persistence.*;
+import jakarta.servlet.ServletContext;
+
+import java.sql.Timestamp;
+import java.time.LocalDate;
 
 @Entity
+@Table(name = "task")
 public class Task {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private Long userId;
+    @ManyToOne
+    @JoinColumn(name = "user", nullable = false)
+    private User user;
 
     private String title;
 
+    @Lob
     private String description;
 
+    @Enumerated(EnumType.STRING)
     private Status status;
 
-    private Time createdAt;//full date
+    private LocalDate dueDate;
 
-    private Time finishedAt;
-
-    private boolean completed;
+    private Timestamp createdAt;
 
     // Constructors, getters, and setters
 
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
-
-    public Time getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Time createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Time getFinishedAt() {
-        return finishedAt;
-    }
-
-    public void setFinishedAt(Time finishedAt) {
-        this.finishedAt = finishedAt;
-    }
-
-   
-
-
     public Task() {
-// Default constructor
+    }
+    public Task(TaskRequest taskRequest, User user) {
+        this.user =  user;
+        this.title = taskRequest.getTaskName();
+        this.description = taskRequest.getTaskDescription();
+        this.status = Status.Pending;
+        this.dueDate = taskRequest.getDueDate();
+        this.createdAt = new Timestamp(System.currentTimeMillis());
     }
 
-    public Task(String title, String description, boolean completed) {
+    public Task(User username, String title, String description, Status status, LocalDate dueDate, Timestamp createdAt) {
+        this.user = user;
         this.title = title;
         this.description = description;
-        this.completed = completed;
-
+        this.status = status;
+        this.dueDate = dueDate;
+        this.createdAt = createdAt;
     }
-
-// Getters and setters
 
     // Id
     public Long getId() {
         return id;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+
+    // UserId
     // Title
     public String getTitle() {
         return title;
@@ -98,12 +82,34 @@ public class Task {
         this.description = description;
     }
 
-    // Completed
-    public boolean isCompleted() {
-        return completed;
+    // Status
+    public Status getStatus() {
+        return status;
     }
 
-    public void setCompleted(boolean completed) {
-        this.completed = completed;
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    // Due Date
+    public LocalDate getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    // Created At
+    public Timestamp getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public void setUser(User user) {
+
     }
 }

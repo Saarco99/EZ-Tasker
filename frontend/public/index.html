@@ -8,7 +8,17 @@
   </head>
   <body>
     <header>
-      <h1 style="height: 4px; margin-bottom: 20px">EZ-Task</h1>
+      <!-- <h1 style="height: 4px; margin-bottom: 20px">EZ-Task</h1> -->
+      <h2 id="loggedInUser">Guest</h2>
+      <ul>
+        <li>E</li>
+        <li>Z</li>
+        <li>-</li>
+        <li>T</li>
+        <li>A</li>
+        <li>S</li>
+        <li>K</li>
+      </ul>
     </header>
     <section1 class="login" id="loginSection">
       <div3>
@@ -22,7 +32,7 @@
 
     <main class="app" id="appSection">
       <section class="add-task">
-        <h2>---Add New Task---</h2>
+        <h3>---Add New Task---</h3>
         <form>
           <div class="form-group">
             <label for="task-name">Name:</label>
@@ -35,7 +45,11 @@
           </div>
           <div class="form-group">
             <label for="task-due-date">Due Date:</label>
-            <input type="date" id="task-due-date" name="task-due-date" />
+            <input
+              type="datetime-local"
+              id="task-due-date"
+              name="task-due-date"
+            />
           </div>
 
           <div
@@ -47,22 +61,28 @@
         </form>
       </section>
 
-      <section class="task-list">
+      <div class="task-list">
+        <h3>---Task List---</h3>
         <div class="task-list-header"></div>
         <table class="task-table" id="taskTable">
           <thead>
             <tr>
+              <th id="idC">Task No.</th>
               <th id="nameC">Name</th>
-              <th id="descC">Description</th>
-              <th id="dueDateC">Due Date</th>
-              <th id="timeLeftC">Time Left</th>
+              <!-- <th id="descC">Description</th> -->
+              <th id="dueDateC">Due-Date</th>
+              <th id="timeLeftC">Hours-Left</th>
               <th id="statusC">Status</th>
+              <th id="DoneC">Done</th>
             </tr>
           </thead>
           <tbody id="taskTableBody"></tbody>
         </table>
-      </section>
+      </div>
     </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="../src/index.js"></script>
   </body>
-  <script src="../src/index.js"></script>
 </html>

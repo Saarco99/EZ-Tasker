@@ -1,30 +1,46 @@
 package com.saar.eztasker.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+import lombok.ToString;
+
+import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Entity
+@Table(name = "user")
+@ToString(exclude = "tasks")
 public class User {
     @Id
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String username;
 
-    @OneToMany
-    private Map<Long, Task> tasks;  // (task id, task)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
+    private List<Task> tasks = new ArrayList<>(); // One user can have many tasks
 
     public User() {
         // Default constructor
-        this.tasks = new HashMap<>();
-    }
+        tasks = new ArrayList<>();
+        }
 
-    public User(long id, String username) {
-        this.id = id;
+        @Override
+        public String toString() {
+            return "User{" +
+                    "id=" + id +
+                    ", username='" + username + '\'' +
+                    ", tasks=" + tasks +
+                    '}';
+        }
+
+    public User(String username) {
         this.username = username;
-        this.tasks = new HashMap<>();
+        tasks = new ArrayList<>();
     }
 
     // Getters and setters
@@ -45,11 +61,11 @@ public class User {
         this.username = username;
     }
 
-    public Map<Long, Task> getTasks() {
+    public List<Task> getTasks() {
         return tasks;
     }
 
-    public void setTasks(Map<Long, Task> tasks) {
+    public void setTasks(List<Task> tasks) {
         this.tasks = tasks;
     }
 }
